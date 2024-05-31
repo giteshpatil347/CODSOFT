@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            list-style: none;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            outline: none;
+        }
+
+        :root {
+            --color-white: #ffffff;
+            --color-light: #828282;
+            --color-primary: #12e12e;
+            --color-dark: #212121;
+            --color-border: #7e686895;
+            --color-bg: #171717;
+
+        }
+
+        body {
+            background: var(--color-bg);
+            color: var(--color-white);
+        }
+
+        h1 {
+            font-size: 35px;
+            font-weight: 400;
+            color: white;
+            line-height: 30px;
+            margin: 1rem 0;
+
+
+        }
+
+        h2 {
+            font-size: 36px;
+            font-weight: 500;
+            line-height: 30px;
+            color: var(--color-border);
+
+        }
+
+        h4 {
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 31px;
+            color: var(--color-primary);
+
+        }
+
+        h5 {
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 20px;
+            color: white;
+
+        }
+
+        p {
+            color: var(--color-white);
+            font-size: 17px;
+            line-height: 23px;
+        }
+
+        .btn {
+
+            display: inline-block;
+            width: fit-content;
+            border: 1px solid white;
+            padding: 12px 30px;
+            font-size: 15px;
+            font-weight: 500;
+            transition: .4s ease;
+            color: #ffff;
+            border-radius: 6px;
+        }
+
+        .btn:hover {
+            background: white;
+            color: var(--color-bg);
+            border-color: transparent;
+        }
+
+        .btn-primary {
+            background: var(--color-primary);
+            border-color: transparent;
+
+        }
+
+        .container {
+            max-width: 160px;
+            width: 90%;
+            margin: 0 auto;
+
+        }
+
+        nav {
+            height: 5rem;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            right: 0;
+
+        }
+
+        .nav-container {
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+
+        }
+
+        ul {
+            display: block;
+            list-style-type: disc;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 950px;
+            margin-inline-end: 100px;
+            padding-inline-start: 40px;
+        }
+
+        .nav-container ul {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .nav-container ul li a {
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 400;
+            transition: .4s ease;
+        }
+
+        .nav-container ul li a:hover {
+            color: var(--color-primary);
+        }
+
+        header {
+            margin-top: 190px;
+        }
+
+        .header-container {
+            display: grid;
+            grid-template-columns: 548% 120%;
+            align-items: center;
+            margin-left: 10%;
+        }
+
+        .header-container p {
+            width: 90%;
+            margin: 2rem 0 1rem;
+            font-style: normal;
+        }
+
+        .name {
+            width: 50px;
+            font-size: 60px;
+            font-weight: 500;
+        }
+
+        .header-container h5 {
+            margin: 1rem 0;
+            color: var(--color-light);
+        }
+
+        .header-action-aria {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        #About {
+            padding-top: 70px;
+        }
+
+        section>h1 {
+            text-align: center;
+            margin-bottom: 44px;
+            margin-top: 158px;
+        }
+
+        .about-container p {
+
+            margin: 4px auto;
+            width: 62%;
+            position: absolute;
+            margin-left: -26%;
+            font-style: normal;
+            font-weight: 55px;
+            text-align: center;
+            font-size: 25px;
+        }
+
+        .about-content {
+            margin-top: 600%;
+            display: grid;
+            margin: 280px 18%;
+            grid-template-columns: repeat(4, 1fr);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .about-article {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: auto;
+            gap: 10px;
+            text-align: center;
+        }
+
+        #skills {
+            padding-top: -1px;
+
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 60px;
+            margin-top: 100px;
+            justify-content: center;
+            text-align: center;
+
+        }
+
+        .skill-article {
+            background: var(--color-dark);
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+            padding: 16px 90px;
+            border-radius: 14px;
+            border-bottom: 4px solid transparent;
+        }
+
+        .skill-article:hover {
+            border-color: var(--color-primary);
+        }
+
+        .content .card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .content .card p {
+            font-size: 20px;
+            line-height: 1.2;
+        }
+
+        .content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 44px;
+
+        }
+
+        .content .card {
+            flex: 2;
+            margin: 50px 50px;
+            box-shadow: 0px 4px 0px rgba(0, 0, 0, 0, 1);
+            background-color: #212121;
+            border-radius: 19px;
+        }
+
+        #Contact {
+            padding-top: 120px;
+        }
+
+        .contatact-container {
+            margin-top: 80px;
+        }
+
+        footer {
+            margin-top: 500px;
+            margin-bottom: 40px;
+            text-align: center;
+            color: var(--color-border);
+        }
+
+        .naWinScroll {
+            background: var(--color-dark);
+            box-shadow: 0 0.1rem rgba(0, 0, 0, 0, 7);
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="container nav-container">
+            <a href="" class="logo">
+                <h2>Gitesh<span> Patil</span></h2>
+            </a>
+            <ul>
+                <li><a href="#About">About </a></li>
+                <li><a href="#Skills">Skills</a></li>
+                <li><a href="#Project">Project</a></li>
+                <li><a href="#Resume">Resume</a></li>
+                <li><a href="#Contact">Contact </a></li>
+
+            </ul>
+        </div>
+    </nav>
+
+    <header>
+        <div class="header-container container">
+            <div class="header-left">
+                <h1>
+                    Hello,
+                    <p class="name"> I am Gitesh </p>
+                </h1>
+                <p>Proficient in HTML, CSS, Javascript, React.js and Node.js experirnce in Windows</p>
+                <h5>Web Development</h5>
+                <br>
+            </div>
+        </div>
+    </header>
+    <section id="About">
+        <h1>About</h1>
+        <div class="container about-container">
+            <p>I'm a diligent Frontend Developer, passionately committed to refining my CSS, HTML, and React skills. My
+                relentless dedication drives me to continually learn and adapt, staying at the forefront of web
+                development trends. My goal is to create captivating, responsive, and user-friendly web
+                interfaces.</p>
+        </div>
+    </section>
+    <section id="Skills">
+        <h1> <span>My Skills</h1>
+        <div class="container skills-container">
+            <article class="skill-article">
+                <h4>HTML </h4>
+            </article>
+            <article class="skill-article">
+                <h4>CSS</h4>
+            </article>
+            <article class="skill-article">
+                <h4>Javascript</h4>
+            </article>
+            <article class="skill-article">
+                <h4>MySql</h4>
+            </article>
+            <article class="skill-article">
+                <h4>Python</h4>
+            </article>
+            <article class="skill-article">
+                <h4>C++</h4>
+            </article>
+        </div>
+    </section>
+    <section id="Project">
+        <h1>Project</h1>
+        <div class="container skills-container">
+            <article class="skill-article">
+                <h4>Calculator</h4>
+            </article>
+            <article class="skill-article">
+                <h4>E-Commerce website</h4>
+            </article>
+            <article class="skill-article">
+                <h4>Chirayu Ayurved website</h4>
+            </article>
+        </div>
+    </section>
+    <section id="Resume">
+        <h1>Download Resume</h1>
+        <div class="container about-container">
+            <a href="cv.pdf" Download class="btn btn-primary">Download</a>
+        </div>
+    </section>
+    <section id="Contact">
+        <h1>Contact</h1>
+        <div class="about-content">
+            <article class="about-article">
+                <h5>FULL NAME</h5>
+                <p>Gitesh Patil</p>
+            </article>
+            <article class="about-article">
+                <h5>EMAIL</h5>
+                <p>gitesh.patil347@gmail.com</p>
+            </article>
+            <article class="about-article">
+                <h5>Linkedin</h5>
+                <p>www.linkedin.com/in/giteshpatil2122</p>
+            </article>
+        </div>
+    </section>
+</body>
+
+</html>
